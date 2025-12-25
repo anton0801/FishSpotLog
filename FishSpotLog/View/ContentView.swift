@@ -1,4 +1,5 @@
 import SwiftUI
+import UserNotifications
 
 struct ContentView: View {
     @AppStorage("isFirstLaunch") private var isFirstLaunch: Bool = true
@@ -8,25 +9,15 @@ struct ContentView: View {
     
     @State private var spots: [Spot] = []
     @State private var generalNotes: GeneralNotes = GeneralNotes()
-    @State private var showOnboarding: Bool = true
-    @State private var showSplash: Bool = true
+    @State private var showOnboarding: Bool = false
     
     var body: some View {
         ZStack {
-            if showSplash {
-                SplashView()
-                    .onAppear {
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-                            withAnimation {
-                                showSplash = false
-                                showOnboarding = isFirstLaunch
-                            }
-                        }
-                    }
-            } else if showOnboarding {
+            if !showOnboarding {
                 OnboardingView {
                     isFirstLaunch = false
                     showOnboarding = false
+                    UserDefaults.standard.set(true, forKey: "showed_onboarding")
                 }
             } else {
                 TabView {
@@ -50,7 +41,7 @@ struct ContentView: View {
                             Label("Settings", systemImage: "gearshape.fill")
                         }
                 }
-                .accentColor(.blue)
+                .accentColor(.futuristicCyan)
                 .onAppear {
                     loadData()
                 }
@@ -60,6 +51,12 @@ struct ContentView: View {
                 .onChange(of: generalNotes) { _ in
                     saveData()
                 }
+            }
+        }
+        .preferredColorScheme(.dark)
+        .onAppear {
+            showOnboarding = UserDefaults.standard.bool(forKey: "showed_onboarding")
+            UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { accepted, _ in
             }
         }
     }

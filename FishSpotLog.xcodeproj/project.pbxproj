@@ -6,33 +6,114 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		8F64C1282EFAFF0B0065C3BB /* AppsFlyerLib in Frameworks */ = {isa = PBXBuildFile; productRef = 8F64C1272EFAFF0B0065C3BB /* AppsFlyerLib */; };
+		8F64C12B2EFAFFB80065C3BB /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 8F64C12A2EFAFFB80065C3BB /* FirebaseAnalytics */; };
+		8F64C12D2EFAFFB80065C3BB /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 8F64C12C2EFAFFB80065C3BB /* FirebaseMessaging */; };
+		8F64C13B2EFB00220065C3BB /* FishSpotNotificationServiceExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 8F64C1342EFB00220065C3BB /* FishSpotNotificationServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		8F64C1432EFB00390065C3BB /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 8F64C1422EFB00390065C3BB /* FirebaseMessaging */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8F64C1392EFB00220065C3BB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8FD373222EF0E49F009D7590 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8F64C1332EFB00220065C3BB;
+			remoteInfo = FishSpotNotificationServiceExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		8F64C1402EFB00220065C3BB /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				8F64C13B2EFB00220065C3BB /* FishSpotNotificationServiceExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		8F64C1342EFB00220065C3BB /* FishSpotNotificationServiceExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = FishSpotNotificationServiceExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FD3732A2EF0E49F009D7590 /* FishSpotLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FishSpotLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		8F64C12F2EFAFFC10065C3BB /* Exceptions for "FishSpotLog" folder in "FishSpotLog" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 8FD373292EF0E49F009D7590 /* FishSpotLog */;
+		};
+		8F64C13F2EFB00220065C3BB /* Exceptions for "FishSpotNotificationServiceExtension" folder in "FishSpotNotificationServiceExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 8F64C1332EFB00220065C3BB /* FishSpotNotificationServiceExtension */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		8F64C1352EFB00220065C3BB /* FishSpotNotificationServiceExtension */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				8F64C13F2EFB00220065C3BB /* Exceptions for "FishSpotNotificationServiceExtension" folder in "FishSpotNotificationServiceExtension" target */,
+			);
+			path = FishSpotNotificationServiceExtension;
+			sourceTree = "<group>";
+		};
 		8FD3732C2EF0E49F009D7590 /* FishSpotLog */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				8F64C12F2EFAFFC10065C3BB /* Exceptions for "FishSpotLog" folder in "FishSpotLog" target */,
+			);
 			path = FishSpotLog;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		8F64C1312EFB00220065C3BB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8F64C1432EFB00390065C3BB /* FirebaseMessaging in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8FD373272EF0E49F009D7590 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F64C12D2EFAFFB80065C3BB /* FirebaseMessaging in Frameworks */,
+				8F64C12B2EFAFFB80065C3BB /* FirebaseAnalytics in Frameworks */,
+				8F64C1282EFAFF0B0065C3BB /* AppsFlyerLib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8F64C1412EFB00390065C3BB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		8FD373212EF0E49F009D7590 = {
 			isa = PBXGroup;
 			children = (
 				8FD3732C2EF0E49F009D7590 /* FishSpotLog */,
+				8F64C1352EFB00220065C3BB /* FishSpotNotificationServiceExtension */,
+				8F64C1412EFB00390065C3BB /* Frameworks */,
 				8FD3732B2EF0E49F009D7590 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -41,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				8FD3732A2EF0E49F009D7590 /* FishSpotLog.app */,
+				8F64C1342EFB00220065C3BB /* FishSpotNotificationServiceExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -48,6 +130,29 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		8F64C1332EFB00220065C3BB /* FishSpotNotificationServiceExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8F64C13C2EFB00220065C3BB /* Build configuration list for PBXNativeTarget "FishSpotNotificationServiceExtension" */;
+			buildPhases = (
+				8F64C1302EFB00220065C3BB /* Sources */,
+				8F64C1312EFB00220065C3BB /* Frameworks */,
+				8F64C1322EFB00220065C3BB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				8F64C1352EFB00220065C3BB /* FishSpotNotificationServiceExtension */,
+			);
+			name = FishSpotNotificationServiceExtension;
+			packageProductDependencies = (
+				8F64C1422EFB00390065C3BB /* FirebaseMessaging */,
+			);
+			productName = FishSpotNotificationServiceExtension;
+			productReference = 8F64C1342EFB00220065C3BB /* FishSpotNotificationServiceExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		8FD373292EF0E49F009D7590 /* FishSpotLog */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8FD373362EF0E4A1009D7590 /* Build configuration list for PBXNativeTarget "FishSpotLog" */;
@@ -55,16 +160,21 @@
 				8FD373262EF0E49F009D7590 /* Sources */,
 				8FD373272EF0E49F009D7590 /* Frameworks */,
 				8FD373282EF0E49F009D7590 /* Resources */,
+				8F64C1402EFB00220065C3BB /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				8F64C13A2EFB00220065C3BB /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				8FD3732C2EF0E49F009D7590 /* FishSpotLog */,
 			);
 			name = FishSpotLog;
 			packageProductDependencies = (
+				8F64C1272EFAFF0B0065C3BB /* AppsFlyerLib */,
+				8F64C12A2EFAFFB80065C3BB /* FirebaseAnalytics */,
+				8F64C12C2EFAFFB80065C3BB /* FirebaseMessaging */,
 			);
 			productName = FishSpotLog;
 			productReference = 8FD3732A2EF0E49F009D7590 /* FishSpotLog.app */;
@@ -80,6 +190,9 @@
 				LastSwiftUpdateCheck = 1640;
 				LastUpgradeCheck = 1640;
 				TargetAttributes = {
+					8F64C1332EFB00220065C3BB = {
+						CreatedOnToolsVersion = 16.4;
+					};
 					8FD373292EF0E49F009D7590 = {
 						CreatedOnToolsVersion = 16.4;
 					};
@@ -94,17 +207,29 @@
 			);
 			mainGroup = 8FD373212EF0E49F009D7590;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				8F64C1262EFAFF0B0065C3BB /* XCRemoteSwiftPackageReference "AppsFlyerFramework" */,
+				8F64C1292EFAFFB80065C3BB /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 8FD3732B2EF0E49F009D7590 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				8FD373292EF0E49F009D7590 /* FishSpotLog */,
+				8F64C1332EFB00220065C3BB /* FishSpotNotificationServiceExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		8F64C1322EFB00220065C3BB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8FD373282EF0E49F009D7590 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -115,6 +240,13 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		8F64C1302EFB00220065C3BB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8FD373262EF0E49F009D7590 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -124,7 +256,76 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		8F64C13A2EFB00220065C3BB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8F64C1332EFB00220065C3BB /* FishSpotNotificationServiceExtension */;
+			targetProxy = 8F64C1392EFB00220065C3BB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		8F64C13D2EFB00220065C3BB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FishSpotNotificationServiceExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = FishSpotNotificationServiceExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fishslogggd.FishSpotLog.FishSpotNotificationServiceExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		8F64C13E2EFB00220065C3BB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FishSpotNotificationServiceExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = FishSpotNotificationServiceExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fishslogggd.FishSpotLog.FishSpotNotificationServiceExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 		8FD373342EF0E4A1009D7590 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -249,7 +450,10 @@
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FishSpotLog/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Fish Spot Log";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Allow to use your camera in the app.";
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "Fish Spot Log may use limited device identifiers strictly to support internal analytics and ensure consistent app behavior. This information helps us understand usage patterns, maintain stability, and improve core functionality. We do not use this data for advertising, do not track users across other apps or websites, and do not share tracking data with third parties.";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -264,7 +468,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 15.3;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.fishslogggd.FishSpotLog;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
@@ -288,7 +492,10 @@
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FishSpotLog/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Fish Spot Log";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Allow to use your camera in the app.";
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "Fish Spot Log may use limited device identifiers strictly to support internal analytics and ensure consistent app behavior. This information helps us understand usage patterns, maintain stability, and improve core functionality. We do not use this data for advertising, do not track users across other apps or websites, and do not share tracking data with third parties.";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -303,7 +510,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 15.3;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.fishslogggd.FishSpotLog;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
@@ -320,6 +527,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		8F64C13C2EFB00220065C3BB /* Build configuration list for PBXNativeTarget "FishSpotNotificationServiceExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8F64C13D2EFB00220065C3BB /* Debug */,
+				8F64C13E2EFB00220065C3BB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		8FD373252EF0E49F009D7590 /* Build configuration list for PBXProject "FishSpotLog" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -339,6 +555,48 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8F64C1262EFAFF0B0065C3BB /* XCRemoteSwiftPackageReference "AppsFlyerFramework" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AppsFlyerSDK/AppsFlyerFramework";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.17.8;
+			};
+		};
+		8F64C1292EFAFFB80065C3BB /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 12.7.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8F64C1272EFAFF0B0065C3BB /* AppsFlyerLib */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8F64C1262EFAFF0B0065C3BB /* XCRemoteSwiftPackageReference "AppsFlyerFramework" */;
+			productName = AppsFlyerLib;
+		};
+		8F64C12A2EFAFFB80065C3BB /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8F64C1292EFAFFB80065C3BB /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		8F64C12C2EFAFFB80065C3BB /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8F64C1292EFAFFB80065C3BB /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
+		};
+		8F64C1422EFB00390065C3BB /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8F64C1292EFAFFB80065C3BB /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8FD373222EF0E49F009D7590 /* Project object */;
 }

@@ -36,65 +36,84 @@ struct StatsView: View {
     
     var body: some View {
         NavigationStack {
-            ScrollView {
-                VStack(spacing: 20) {
-                    StatsCard(title: "Total Fishing Days", value: "\(totalFishingDays)")
-                    StatsCard(title: "Best Water Type", value: bestWaterType?.rawValue ?? "None")
-                    StatsCard(title: "Most Frequent Fish", value: mostFrequentFish ?? "None")
-                    StatsCard(title: "Most Successful Spot", value: mostSuccessfulSpot?.name ?? "None")
-                    
-                    Section(header: Text("Fishing by Months").font(.headline)) {
-                        ForEach(fishingByMonths.sorted(by: { $0.key < $1.key }), id: \.key) { month, count in
-                            HStack {
-                                Text(month)
-                                Spacer()
-                                Text("\(count)")
+            ZStack {
+                LinearGradient(gradient: Gradient(colors: [Color.darkBackground, Color.futuristicCyan.opacity(0.4)]), startPoint: .top, endPoint: .bottom)
+                    .ignoresSafeArea()
+                
+                ScrollView {
+                    VStack(spacing: 25) {
+                        StatsCard(title: "Total Fishing Days", value: "\(totalFishingDays)", gradient: .init(colors: [Color.futuristicBlue, .cyan]))
+                        StatsCard(title: "Best Water Type", value: bestWaterType?.rawValue ?? "None", gradient: .init(colors: [Color.futuristicGreen, .green]))
+                        StatsCard(title: "Most Frequent Fish", value: mostFrequentFish ?? "None", gradient: .init(colors: [Color.neonYellow, .yellow]))
+                        StatsCard(title: "Most Successful Spot", value: mostSuccessfulSpot?.name ?? "None", gradient: .init(colors: [Color.futuristicCyan, .blue]))
+                        
+                        Section(header: FuturisticSectionHeader(text: "Fishing by Months")) {
+                            ForEach(fishingByMonths.sorted(by: { $0.key < $1.key }), id: \.key) { month, count in
+                                HStack {
+                                    Text(month)
+                                        .foregroundColor(Color.accentWhite.opacity(0.7))
+                                    Spacer()
+                                    Text("\(count)")
+                                        .foregroundColor(Color.accentWhite)
+                                }
+                                .padding()
+                                .background(Color.darkBackground.opacity(0.6))
+                                .cornerRadius(15)
+                            }
+                        }
+                        
+                        Section(header: FuturisticSectionHeader(text: "Results")) {
+                            ForEach(FishingResult.allCases) { res in
+                                HStack {
+                                    Image(systemName: res.icon)
+                                        .foregroundColor(res.neonColor)
+                                    Text(res.rawValue)
+                                        .foregroundColor(Color.accentWhite.opacity(0.7))
+                                    Spacer()
+                                    Text("\(resultsCount[res] ?? 0)")
+                                        .foregroundColor(Color.accentWhite)
+                                }
+                                .padding()
+                                .background(Color.darkBackground.opacity(0.6))
+                                .cornerRadius(15)
                             }
                         }
                     }
                     .padding()
-                    .background(Color.white)
-                    .cornerRadius(10)
-                    
-                    Section(header: Text("Results").font(.headline)) {
-                        ForEach(FishingResult.allCases) { res in
-                            HStack {
-                                Image(systemName: res.icon)
-                                    .foregroundColor(res.color)
-                                Text(res.rawValue)
-                                Spacer()
-                                Text("\(resultsCount[res] ?? 0)")
-                            }
-                        }
-                    }
-                    .padding()
-                    .background(Color.white)
-                    .cornerRadius(10)
                 }
-                .padding()
+                .navigationTitle("Stats")
             }
-            .navigationTitle("Stats")
         }
+        .preferredColorScheme(.dark)
     }
 }
 
 struct StatsCard: View {
     let title: String
     let value: String
+    let gradient: Gradient
+    
+    @State private var hover: Bool = false
     
     var body: some View {
         HStack {
             Text(title)
-                .font(.headline)
-                .foregroundColor(.gray)
+                .font(.system(size: 18, weight: .medium, design: .rounded))
+                .foregroundColor(.accentWhite.opacity(0.7))
             Spacer()
             Text(value)
-                .font(.title3)
-                .bold()
+                .font(.system(size: 24, weight: .bold, design: .rounded))
+                .foregroundColor(.accentWhite)
         }
         .padding()
-        .background(Color.white)
-        .cornerRadius(10)
-        .shadow(radius: 5)
+        .background(Color.darkBackground.opacity(0.8))
+        .cornerRadius(25)
+        .overlay(RoundedRectangle(cornerRadius: 25).stroke(LinearGradient(gradient: gradient, startPoint: .topLeading, endPoint: .bottomTrailing), lineWidth: 2))
+        .shadow(color: .futuristicCyan.opacity(hover ? 0.8 : 0.4), radius: 15)
+        .scaleEffect(hover ? 1.05 : 1.0)
+        .animation(.spring(), value: hover)
+        .onHover { hover in
+            self.hover = hover
+        }
     }
 }
