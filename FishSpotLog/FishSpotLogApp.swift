@@ -16,7 +16,7 @@ enum FishSpotLogStates { case setup, operational, legacy, disconnected }
 @main
 struct FishSpotLogApp: App {
     
-    // @UIApplicationDelegateAdaptor(ApplicationDelegate.self) var delegateApplication
+    @UIApplicationDelegateAdaptor(ApplicationDelegate.self) var delegateApplication
     
     var body: some Scene {
         WindowGroup {
